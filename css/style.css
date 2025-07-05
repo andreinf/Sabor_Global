@@ -1,0 +1,128 @@
+:root {
+  --color-fondo: #fff8f0;
+  --color-texto: #1e1e1e;
+  --color-secundario: #d63447;
+  --color-footer: #f4e2d8;
+
+  --fuente-principal: clamp(1.5rem, 5vw, 3rem);
+  --fuente-secundaria: clamp(1.125rem, 3vw, 1.75rem);
+  --linea-altura: clamp(1.5, 1.5vw + 1rem, 1.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: var(--linea-altura);
+}
+
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-texto {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  color: white;
+  text-shadow: 1px 1px 5px #000;
+}
+
+.titulo-principal {
+  font-size: var(--fuente-principal);
+  color: #fff;
+}
+
+.subtitulo {
+  font-size: var(--fuente-secundaria);
+  color: #eee;
+}
+
+.contenido {
+  padding: 2rem;
+}
+
+.articulos {
+  display: grid;
+  gap: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+.card h2 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  padding: 1rem;
+  color: var(--color-secundario);
+}
+
+.card p {
+  padding: 0 1rem 1rem;
+}
+
+.entrevista {
+  margin-top: 4rem;
+  padding: 4rem 2rem;
+  background-image: url("img/chef.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 1px 1px 4px #000;
+  aspect-ratio: 3/1;
+  display: flex;
+  align-items: center;
+}
+
+.texto-entrevista {
+  max-width: 600px;
+}
+
+.footer {
+  background: var(--color-footer);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (min-width: 600px) {
+  .articulos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .articulos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-texto {
+    left: 10%;
+  }
+}
